@@ -17,6 +17,8 @@ ann_model.add(Flatten(input_shape = (32,32,3)))
 ann_model.add(Dense(3000, activation= 'relu'))
 ann_model.add(Dense(1000, activation= 'relu'))
 ann_model.add(Dense(10, activation= 'softmax'))
+
+ann_model.compile(optimizer='SGD', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 ```
 
 2. CNN Model
@@ -32,4 +34,6 @@ cnn_model.add(MaxPooling2D((2, 2)))
 cnn_model.add(Flatten())
 cnn_model.add(Dense(64, activation='relu'))
 cnn_model.add(Dense(10, activation='softmax'))
+
+cnn_model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 ```
